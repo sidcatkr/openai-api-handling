@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import * as motion from 'motion/react-client'
+import Link from 'next/link'
 
 type Props = {
   sysPrompt: string
@@ -73,6 +74,15 @@ export default function Main({ sysPrompt }: Props) {
           </div>
         )}
         <p className="mt-4">You typed: {text}</p>
+        <Link href="/">
+          <motion.button
+            className="bg-blue-500 text-white px-4 py-2 rounded-full place-self-center"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Go to Home
+          </motion.button>
+        </Link>
       </main>
     </div>
   )

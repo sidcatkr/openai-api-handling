@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   console.log('Received sysPrompt:', sysPrompt)
   const AKASH_API_KEY = process.env.AKASH_API_KEY
   const client = axios.create({
-    baseURL: 'https://chatapi.akash.network/api/v1',
+    baseURL: process.env.CHATAPI_BASE_URL,
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${AKASH_API_KEY}`,
